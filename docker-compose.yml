@@ -12,7 +12,7 @@ services:
     ports:
       - "1521:1521"
     volumes:
-      - ./oracle-volume:/opt/oracle/oradata  # Para versiones 18c en adelante
+      - ./oracle-volume:/opt/oracle/oradata  # Para versiones 18c en adelante 
       # - oracle-volume:/u01/app/oracle/oradata  # Si usas 11gR2
 
 volumes:
