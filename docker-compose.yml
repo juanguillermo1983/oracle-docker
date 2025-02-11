@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  oracle-xe:
+    image: gvenzl/oracle-xe:latest
+    container_name: oracle-xe
+    restart: unless-stopped
+    environment:
+      ORACLE_PASSWORD: "${ORACLE_PASSWORD}"
+      APP_USER: "${APP_USER}"
+      APP_USER_PASSWORD: "${APP_USER_PASSWORD}"
+    ports:
+      - "1521:1521"
+    volumes:
+      - ./oracle-volume:/opt/oracle/oradata  # Para versiones 18c en adelante
+      # - oracle-volume:/u01/app/oracle/oradata  # Si usas 11gR2
+
+volumes:
+  oracle-volume:
+    driver: local
+
